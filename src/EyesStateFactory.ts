@@ -13,30 +13,46 @@ export class EyesStateFactory {
   }
 
   private getStateByCoordinates([x, y]: Coordinates): EyesState {
-    if (x < 0.33) {
-      if (y < 0.33) {
+    if (this.isFirstColumn(x)) {
+      if (this.isFirstRow(y)) {
         return EyesState.TopLeft
-      } else if (y < 0.66) {
+      } else if (this.isSecondRow(y)) {
         return EyesState.Left
       } else {
         return EyesState.BottomLeft
       }
-    } else if (x < 0.66) {
-      if (y < 0.33) {
+    } else if (this.isSecondColumn(x)) {
+      if (this.isFirstRow(y)) {
         return EyesState.Top
-      } else if (y < 0.66) {
+      } else if (this.isSecondRow(y)) {
         return EyesState.Closed
       } else {
         return EyesState.Bottom
       }
     } else {
-      if (y < 0.33) {
+      if (this.isFirstRow(y)) {
         return EyesState.TopRight
-      } else if (y < 0.66) {
+      } else if (this.isSecondRow(y)) {
         return EyesState.Right
       } else {
         return EyesState.BottomRight
       }
     }
+  }
+
+  private isSecondRow(y: number) {
+    return y < 0.66
+  }
+
+  private isFirstRow(y: number) {
+    return y < 0.33
+  }
+
+  private isSecondColumn(x: number) {
+    return x < 0.75
+  }
+
+  private isFirstColumn(x: number) {
+    return x < 0.25
   }
 }
