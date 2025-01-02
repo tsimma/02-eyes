@@ -1,5 +1,5 @@
 import { MouseEvent, MouseEventHandler } from 'react'
-import { Coordinates } from './types/Coordinates'
+import { Coordinates } from '../types/Coordinates'
 
 export function useEyesContainerMouseMoveHandler(
   setCoordinates: (coordinates: Coordinates) => void,

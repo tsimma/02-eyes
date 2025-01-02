@@ -1,6 +1,6 @@
 import { FC, PropsWithChildren } from 'react'
 import { Coordinates } from './types/Coordinates'
-import { useEyesContainerMouseMoveHandler } from './useEyesContainerMouseMoveHandler'
+import { useEyesContainerMouseMoveHandler } from './hooks/useEyesContainerMouseMoveHandler'
 
 type Props = PropsWithChildren<{
   setCoordinates: (coordinates: Coordinates | null) => void

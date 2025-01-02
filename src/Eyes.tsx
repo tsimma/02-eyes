@@ -6,7 +6,7 @@ export const Eyes: FC<{
 }> = ({ state }) => {
   return (
     <div
-      className={`hover:bg-[url("./resources/closedeyes.jpg")] bg-[url("./resources/openeyes.jpg")] w-[500px] h-[200px] bg-cover bg-center bg-no-repeat  contrast-125`}
+      className={`hover:bg-[url("./images/closedeyes.jpg")] bg-[url("./images/openeyes.jpg")] w-[500px] h-[200px] bg-cover bg-center bg-no-repeat  contrast-125`}
     >
       {state}
     </div>
