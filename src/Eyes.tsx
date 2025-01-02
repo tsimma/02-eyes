@@ -2,10 +2,11 @@ import { FC } from 'react'
 import { EyesState } from './types/EyesState'
 import closedEyes from './images/closedeyes.jpg'
 import openEyes from './images/openeyes.jpg'
+import bottomEyes from './images/bottom-eyes.jpg'
 
 const mapping: { [key in EyesState]: string } = {
   [EyesState.Closed]: closedEyes,
-  [EyesState.Bottom]: openEyes,
+  [EyesState.Bottom]: bottomEyes,
   [EyesState.BottomLeft]: openEyes,
   [EyesState.BottomRight]: openEyes,
   [EyesState.Direct]: openEyes,
@@ -27,8 +28,6 @@ export const Eyes: FC<{
       style={{
         backgroundImage: `url(${url})`,
       }}
-    >
-      {state}
-    </div>
+    />
   )
 }
