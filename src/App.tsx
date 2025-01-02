@@ -1,14 +1,16 @@
 import { Eyes } from './Eyes'
-import { FC, useState } from 'react'
+import { FC, useMemo, useState } from 'react'
 import { EyesContainer } from './EyesContainer'
-import { Coordinates } from './Coordinates'
+import { Coordinates } from './types/Coordinates'
+import { EyesState } from './types/EyesState'
 
 export const App: FC = () => {
   const [coordinates, setCoordinates] = useState<Coordinates | null>(null)
+  const state = useMemo(() => EyesState.Closed, [coordinates])
 
   return (
     <EyesContainer setCoordinates={setCoordinates}>
-      <Eyes coordinates={coordinates} />
+      <Eyes state={state} />
     </EyesContainer>
   )
 }

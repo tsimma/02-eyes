@@ -1,5 +1,5 @@
 import { FC, PropsWithChildren } from 'react'
-import { Coordinates } from './Coordinates'
+import { Coordinates } from './types/Coordinates'
 import { useEyesContainerMouseMoveHandler } from './useEyesContainerMouseMoveHandler'
 
 type Props = PropsWithChildren<{
