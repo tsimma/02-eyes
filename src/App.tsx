@@ -1,13 +1,6 @@
-import './App.css'
+import { Eyes } from './Eyes'
+import { FC } from 'react'
 
-function App() {
-  return (
-    <div className="h-screen flex items-center justify-center contrast-125">
-      <div
-        className={`hover:bg-[url("./resources/closedeyes.jpg")] bg-[url("./resources/openeyes.jpg")] w-[500px] h-[200px] bg-cover bg-center bg-no-repeat`}
-      />
-    </div>
-  )
+export const App: FC = () => {
+  return <Eyes />
 }
-
-export default App
