@@ -2,42 +2,28 @@ import { Coordinates } from './types/Coordinates'
 import { EyesState } from './types/EyesState'
 
 export class EyesStateFactory {
+  private config = [
+    [EyesState.TopLeft, EyesState.Top, EyesState.TopRight],
+    [EyesState.Left, EyesState.Closed, EyesState.Right],
+    [EyesState.BottomLeft, EyesState.Bottom, EyesState.BottomRight],
+  ]
+
   constructor(private coordinates: Coordinates | null) {}
 
   getState(): EyesState {
-    if (this.coordinates === null) {
-      return EyesState.Direct
-    }
-
-    return this.getStateByCoordinates(this.coordinates)
+    return this.coordinates ? this.getStateByCoordinates(this.coordinates) : EyesState.Direct
   }
 
   private getStateByCoordinates([x, y]: Coordinates): EyesState {
-    if (this.isFirstColumn(x)) {
-      if (this.isFirstRow(y)) {
-        return EyesState.TopLeft
-      } else if (this.isSecondRow(y)) {
-        return EyesState.Left
-      } else {
-        return EyesState.BottomLeft
-      }
-    } else if (this.isSecondColumn(x)) {
-      if (this.isFirstRow(y)) {
-        return EyesState.Top
-      } else if (this.isSecondRow(y)) {
-        return EyesState.Closed
-      } else {
-        return EyesState.Bottom
-      }
-    } else {
-      if (this.isFirstRow(y)) {
-        return EyesState.TopRight
-      } else if (this.isSecondRow(y)) {
-        return EyesState.Right
-      } else {
-        return EyesState.BottomRight
-      }
-    }
+    return this.config[this.getRowIndex(y)][this.getColumnIndex(x)]
+  }
+
+  private getColumnIndex(x: number) {
+    return this.isFirstColumn(x) ? 0 : this.isSecondColumn(x) ? 1 : 2
+  }
+
+  private getRowIndex(y: number) {
+    return this.isFirstRow(y) ? 0 : this.isSecondRow(y) ? 1 : 2
   }
 
   private isSecondRow(y: number) {
