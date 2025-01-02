@@ -1,11 +1,14 @@
 import { Eyes } from './Eyes'
-import { FC } from 'react'
-import { Container } from './Container'
+import { FC, useState } from 'react'
+import { EyesContainer } from './EyesContainer'
+import { Coordinates } from './Coordinates'
 
 export const App: FC = () => {
+  const [coordinates, setCoordinates] = useState<Coordinates | null>(null)
+
   return (
-    <Container>
-      <Eyes x={12} y={23} />
-    </Container>
+    <EyesContainer setCoordinates={setCoordinates}>
+      <Eyes coordinates={coordinates} />
+    </EyesContainer>
   )
 }
