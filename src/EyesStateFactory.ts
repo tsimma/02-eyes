@@ -2,7 +2,7 @@ import { Coordinates } from './types/Coordinates'
 import { EyesState } from './types/EyesState'
 
 export class EyesStateFactory {
-  private config = [
+  private grid = [
     [EyesState.TopLeft, EyesState.Top, EyesState.TopRight],
     [EyesState.Left, EyesState.Closed, EyesState.Right],
     [EyesState.BottomLeft, EyesState.Bottom, EyesState.BottomRight],
@@ -15,7 +15,7 @@ export class EyesStateFactory {
   }
 
   private getStateByCoordinates([x, y]: Coordinates): EyesState {
-    return this.config[this.getRowIndex(y)][this.getColumnIndex(x)]
+    return this.grid[this.getRowIndex(y)][this.getColumnIndex(x)]
   }
 
   private getColumnIndex(x: number) {
