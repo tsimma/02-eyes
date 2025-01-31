@@ -1,14 +1,14 @@
 {
   "files": {
     "main.css": "/02-eyes/static/css/main.60cd7110.css",
-    "main.js": "/02-eyes/static/js/main.b43b2d42.js",
+    "main.js": "/02-eyes/static/js/main.fc84f343.js",
     "static/media/portrait-to-web.jpg": "/02-eyes/static/media/portrait-to-web.d49f7fa14c2dd3adaf1b.jpg",
     "index.html": "/02-eyes/index.html",
     "main.60cd7110.css.map": "/02-eyes/static/css/main.60cd7110.css.map",
-    "main.b43b2d42.js.map": "/02-eyes/static/js/main.b43b2d42.js.map"
+    "main.fc84f343.js.map": "/02-eyes/static/js/main.fc84f343.js.map"
   },
   "entrypoints": [
     "static/css/main.60cd7110.css",
-    "static/js/main.b43b2d42.js"
+    "static/js/main.fc84f343.js"
   ]
 }
